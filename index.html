@@ -93,7 +93,7 @@
             width: 60px;
             height: 60px;
             font-size: 24px;
-            cursor: pointer;
+            cursor: button;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             z-index: 1000;
             transition: transform 0.3s;
@@ -265,15 +265,15 @@
             }
         }
         .gif-final {
-    text-align: center;
-    margin-top: 50px;
-}
+            text-align: center;
+            margin-top: 50px;
+        }
 
-.gif-final img {
-    max-width: 90%;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-}
+        .gif-final img {
+            max-width: 90%;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
 
     </style>
 </head>
@@ -288,8 +288,8 @@
 
     <button class="music-control" id="musicBtn" title="Clique para tocar música">🎵</button>
     <audio id="bgMusic" loop>
-    <source src="musica.mp3" type="audio/mpeg">
-</audio>
+        <source src="musica.mp3" type="audio/mpeg">
+    </audio>
     <div class="container">
         <div class="sunflower sunflower-1">🌻</div>
         <div class="sunflower sunflower-2">🌻</div>
@@ -300,16 +300,16 @@
 
         <div class="photo-gallery">
             <div class="photo-card">
-    <img src="foto1.jpg" alt="Mãe sorrindo">
-    <div class="photo-caption">Seu sorriso ilumina tudo! ✨</div>
-              <div class="gif-final">
-    <img src="WhatsApp Video 2025-12-09 at 12.20.07.gif" alt="gif fofo">
-</div>
-<div class="photo-card">
-    <img src="foto2.jpg" alt="Mãe linda">
-    <div class="photo-caption">Linda por dentro e por fora! 💚</div>
-</div>
+                <img src="foto1.jpg" alt="Mãe sorrindo">
+                <div class="photo-caption">Seu sorriso ilumina tudo! ✨</div>
+            </div>
+
+            <div class="photo-card">
+                <img src="foto2.jpg" alt="Mãe linda">
+                <div class="photo-caption">Linda por dentro e por fora! 💚</div>
+            </div>
         </div>
+
         <div class="message">
             Hoje é o dia de celebrar essa pessoa incrível que você é! 
             Uma mulher forte, dedicada, que sempre busca fazer a diferença na vida das pessoas.
@@ -363,7 +363,13 @@
             <br>
             Você é incrível!
         </div>
-    </div>
+
+        <!-- GIF FINAL - colocado corretamente DEPOIS do final-message -->
+        <div class="gif-final">
+            <img src="WhatsApp Video 2025-12-09 at 12.20.07.gif" alt="gif fofo">
+        </div>
+
+    </div> <!-- fecha .container -->
 
     <script>
 const musicBtn = document.getElementById('musicBtn');
