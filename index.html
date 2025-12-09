@@ -103,20 +103,32 @@
             transform: scale(1.1);
         }
 
-        .sunflower {
-            position: absolute;
-            font-size: 60px;
-            animation: float 3s ease-in-out infinite;
-        }
+   /* Girassóis animados que caem */
+.sunflower {
+    position: fixed;          /* fica relativo à viewport para "cair" */
+    top: -10vh;               /* começa acima da viewport */
+    pointer-events: none;     /* não atrapalha cliques */
+    will-change: transform, opacity;
+    z-index: 500;             /* abaixo do overlay (2000) e musicBtn (1000) */
+    user-select: none;
+    transform-origin: center;
+    animation-name: fall;
+    animation-timing-function: linear;
+    animation-iteration-count: 1; /* cada instância cai uma vez e é removida pelo JS */
+}
 
-        .sunflower-1 { top: -30px; right: 40px; animation-delay: 0s; }
-        .sunflower-2 { top: 50%; left: -30px; animation-delay: 1s; }
-        .sunflower-3 { bottom: -20px; right: 100px; animation-delay: 2s; }
+/* Queda + rotação */
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(130vh) rotate(720deg) scale(0.95);
+        opacity: 0.95;
+    }
+}
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(5deg); }
-        }
 
         h1 {
             text-align: center;
@@ -291,11 +303,7 @@
     <source src="musica.mp3" type="audio/mpeg">
 </audio>
     <div class="container">
-        <div class="sunflower sunflower-1">🌻</div>
-        <div class="sunflower sunflower-2">🌻</div>
-        <div class="sunflower sunflower-3">🌻</div>
-
-        <h1>🌻 Feliz Aniversário, Mãe! 🌻</h1>
+         <h1>🌻 Feliz Aniversário, Mãe! 🌻</h1>
         <div class="subtitle">Uma mulher extraordinária que ilumina o mundo como um girassol!</div>
 
         <div class="photo-gallery">
@@ -409,6 +417,63 @@ musicBtn.addEventListener('click', (e) => {
     }
     isPlaying = !isPlaying;
 });
+        // --- Criador de girassóis que caem --- //
+(function(){
+    const MAX_SIMULTANEOUS = 12;   // quantos girassóis aparecem ao mesmo tempo
+    const SPAWN_INTERVAL = 800;    // ms entre tentativas de spawn
+    let active = 0;
+
+    function spawnSunflower() {
+        if (active >= MAX_SIMULTANEOUS) return;
+
+        const s = document.createElement('div');
+        s.className = 'sunflower';
+        s.textContent = '🌻';
+
+        // aleatoriza posição horizontal (com margem)
+        const left = Math.random() * 100; // vw
+        s.style.left = `calc(${left}vw - 2.5rem)`; // ajusta pro tamanho
+        // aleatoriza tamanho
+        const size = 28 + Math.random() * 72; // px
+        s.style.fontSize = `${size}px`;
+        // aleatoriza duração e atraso
+        const duration = (6 + Math.random() * 8).toFixed(2); // 6s a 14s
+        const delay = (Math.random() * 2).toFixed(2); // 0 a 2s
+        s.style.animationDuration = `${duration}s`;
+        s.style.animationDelay = `${delay}s`;
+        // adiciona leve variação na opacidade inicial
+        s.style.opacity = (0.9 + Math.random() * 0.15).toString();
+
+        // rotação adicional (simula "sway") usando transform CSS antes da animação
+        const extraRotate = (Math.random() * 40 - 20).toFixed(1);
+        s.style.transform = `rotate(${extraRotate}deg)`;
+
+        document.body.appendChild(s);
+        active++;
+
+        // remove após terminar animação (duration + delay)
+        const totalMs = (parseFloat(duration) + parseFloat(delay)) * 1000 + 200;
+        setTimeout(() => {
+            s.remove();
+            active--;
+        }, totalMs);
+    }
+
+    // spawn contínuo
+    const spawnLoop = setInterval(() => {
+        // chance de spawn variável para parecer natural
+        if (Math.random() < 0.9) spawnSunflower();
+        // também tenta criar pequenos grupos às vezes
+        if (Math.random() < 0.25) {
+            const extra = 1 + Math.floor(Math.random() * 3);
+            for (let i=0;i<extra;i++) setTimeout(spawnSunflower, i*120);
+        }
+    }, SPAWN_INTERVAL);
+
+    // opção: parar quando a página perde foco (economia)
+    window.addEventListener('blur', () => clearInterval(spawnLoop));
+})();
+
 </script>
 
 </body>
