@@ -1,1 +1,402 @@
-<!DOCTYPE html><html lang="pt-BR"><head>    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Feliz Aniversário! 🌻</title>    <style>/* Overlay inicial */.overlay {    position: fixed;    top: 0;    left: 0;    width: 100vw;    height: 100vh;    background: rgba(0,0,0,0.75);    display: flex;    justify-content: center;    align-items: center;    z-index: 2000;}.overlay-content {    text-align: center;    color: white;    animation: fadeIn 1s;}.overlay-icons {    font-size: 50px;    margin-bottom: 15px;}.overlay-text {    font-size: 1.5em;    margin-bottom: 20px;}.start-btn {    background: linear-gradient(135deg, #ff8c00, #ffd700);    border: none;    padding: 18px 40px;    font-size: 1.4em;    color: white;    border-radius: 40px;    cursor: pointer;    box-shadow: 0 10px 30px rgba(255,170,0,0.6);    transition: transform 0.2s, box-shadow 0.2s;}.start-btn:hover {    transform: scale(1.05);    box-shadow: 0 15px 40px rgba(255,170,0,0.8);}@keyframes fadeIn {    from { opacity: 0; }    to { opacity: 1; }}        * {            margin: 0;            padding: 0;            box-sizing: border-box;        }        body {            font-family: 'Georgia', serif;            background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);            min-height: 100vh;            display: flex;            justify-content: center;            align-items: center;            overflow-x: hidden;            padding: 20px 0;        }        .container {            max-width: 900px;            margin: 20px;            background: rgba(255, 255, 255, 0.95);            border-radius: 30px;            padding: 50px;            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);            position: relative;        }        .music-control {            position: fixed;            top: 20px;            right: 20px;            background: linear-gradient(135deg, #ff8c00, #ffd700);            border: none;            border-radius: 50%;            width: 60px;            height: 60px;            font-size: 24px;            cursor: pointer;            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);            z-index: 1000;            transition: transform 0.3s;        }        .music-control:hover {            transform: scale(1.1);        }        .sunflower {            position: absolute;            font-size: 60px;            animation: float 3s ease-in-out infinite;        }        .sunflower-1 { top: -30px; right: 40px; animation-delay: 0s; }        .sunflower-2 { top: 50%; left: -30px; animation-delay: 1s; }        .sunflower-3 { bottom: -20px; right: 100px; animation-delay: 2s; }        @keyframes float {            0%, 100% { transform: translateY(0px) rotate(0deg); }            50% { transform: translateY(-20px) rotate(5deg); }        }        h1 {            text-align: center;            color: #ff8c00;            font-size: 3em;            margin-bottom: 20px;            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);        }        .subtitle {            text-align: center;            color: #19547b;            font-size: 1.3em;            margin-bottom: 40px;            font-style: italic;        }        .photo-gallery {            display: grid;            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));            gap: 20px;            margin: 40px 0;        }        .photo-card {            border-radius: 20px;            overflow: hidden;            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);            transition: transform 0.3s;            background: white;        }        .photo-card:hover {            transform: scale(1.05) rotate(2deg);        }        .photo-card img {            width: 100%;            height: 350px;            object-fit: cover;            display: block;        }        .photo-caption {            padding: 15px;            text-align: center;            background: linear-gradient(135deg, #ffd89b 0%, #ff8c00 100%);            color: white;            font-weight: bold;            font-size: 1.1em;        }        .message {            text-align: center;            color: #333;            font-size: 1.2em;            line-height: 1.8;            margin-bottom: 40px;        }        .qualities {            display: grid;            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));            gap: 20px;            margin: 40px 0;        }        .quality-card {            background: linear-gradient(135deg, #ffd89b 0%, #ff8c00 100%);            padding: 25px;            border-radius: 15px;            text-align: center;            color: white;            font-size: 1.1em;            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);            transition: transform 0.3s;        }        .quality-card:hover {            transform: translateY(-10px) scale(1.05);        }        .icon {            font-size: 2.5em;            margin-bottom: 10px;        }        .dragon-balls {            display: flex;            justify-content: center;            gap: 15px;            margin: 40px 0;            flex-wrap: wrap;        }        .dragon-ball {            width: 60px;            height: 60px;            background: linear-gradient(135deg, #ff8c00, #ffd700);            border-radius: 50%;            display: flex;            align-items: center;            justify-content: center;            font-size: 1.5em;            color: #ff0000;            font-weight: bold;            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);            animation: spin 4s linear infinite;        }        @keyframes spin {            0% { transform: rotate(0deg); }            100% { transform: rotate(360deg); }        }        .final-message {            text-align: center;            font-size: 1.5em;            color: #19547b;            margin-top: 40px;            font-weight: bold;        }        .heart {            color: #ff0000;            animation: heartbeat 1.5s ease-in-out infinite;        }        @keyframes heartbeat {            0%, 100% { transform: scale(1); }            50% { transform: scale(1.2); }        }        @media (max-width: 600px) {            .container {                padding: 30px 20px;            }            h1 {                font-size: 2em;            }            .sunflower {                font-size: 40px;            }            .photo-card img {                height: 280px;            }        }    </style></head><body><div id="startOverlay" class="overlay">    <div class="overlay-content">        <div class="overlay-icons">🎵 🌻 🎵</div>        <p class="overlay-text">Toque na tela para começar</p>        <button id="startButton" class="start-btn">▶ Começar a celebração!</button>    </div></div>    <button class="music-control" id="musicBtn" title="Clique para tocar música">🎵</button>    <audio id="bgMusic" loop>    <source src="musica.mp3" type="audio/mpeg"></audio>    <div class="container">        <div class="sunflower sunflower-1">🌻</div>        <div class="sunflower sunflower-2">🌻</div>        <div class="sunflower sunflower-3">🌻</div>        <h1>🌻 Feliz Aniversário, Mãe! 🌻</h1>        <div class="subtitle">Uma mulher extraordinária que ilumina o mundo como um girassol!</div>        <div class="photo-gallery">            <div class="photo-card">    <img src="foto1.jpg" alt="Mãe sorrindo">    <div class="photo-caption">Seu sorriso ilumina tudo! ✨</div></div><div class="photo-card">    <img src="foto2.jpg" alt="Mãe linda">    <div class="photo-caption">Linda por dentro e por fora! 💚</div></div>        </div>        <div class="message">            Hoje é o dia de celebrar essa pessoa incrível que você é!             Uma mulher forte, dedicada, que sempre busca fazer a diferença na vida das pessoas.            Assim como um girassol que sempre busca a luz, você ilumina todos ao seu redor com seu amor e dedicação.        </div>        <div class="qualities">            <div class="quality-card">                <div class="icon">💪</div>                <div>Guerreira Incansável</div>            </div>            <div class="quality-card">                <div class="icon">❤️</div>                <div>Coração Generoso</div>            </div>            <div class="quality-card">                <div class="icon">🌟</div>                <div>Inspiração Diária</div>            </div>            <div class="quality-card">                <div class="icon">🤗</div>                <div>Acolhedora</div>            </div>        </div>        <div class="message">            Você é como aqueles personagens que nunca desistem,             que lutam pelos seus sonhos e pelos que amam com toda a força.            Sua energia é contagiante, seu sorriso transforma dias difíceis,             e sua capacidade de ajudar as pessoas é simplesmente admirável!        </div>        <div class="dragon-balls">            <div class="dragon-ball">⭐</div>            <div class="dragon-ball">⭐</div>            <div class="dragon-ball">⭐</div>            <div class="dragon-ball">⭐</div>            <div class="dragon-ball">⭐</div>            <div class="dragon-ball">⭐</div>            <div class="dragon-ball">⭐</div>        </div>        <div class="message">            Que este novo ano seja repleto de realizações, alegrias e momentos especiais.            Que você continue sendo essa força da natureza que transforma vidas             e espalha amor por onde passa. Você merece todo o melhor que o mundo tem a oferecer!        </div>        <div class="final-message">            Te amo muito! <span class="heart">❤️</span>            <br>            Você é incrível!        </div>    </div>    <script>const musicBtn = document.getElementById('musicBtn');const bgMusic = document.getElementById('bgMusic');const startOverlay = document.getElementById('startOverlay');const startButton = document.getElementById('startButton');let isPlaying = false;// Quando clicar no botão grandestartButton.addEventListener('click', () => {    startMusicAndEnter();});// Função que inicia a música e remove o overlayfunction startMusicAndEnter() {    bgMusic.play().then(() => {        isPlaying = true;        musicBtn.textContent = '🔊';        startOverlay.style.display = 'none';    }).catch(() => {        // Caso ainda bloqueie (raro)        alert("Toque novamente para ativar a música!");    });}// Se a pessoa clicar em qualquer parte da telastartOverlay.addEventListener('click', () => {    startMusicAndEnter();});// Botão pequeno no canto superior direitomusicBtn.addEventListener('click', (e) => {    e.stopPropagation();    if (isPlaying) {        bgMusic.pause();        musicBtn.textContent = '🎵';    } else {        bgMusic.play();        musicBtn.textContent = '🔊';    }    isPlaying = !isPlaying;});</script></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Aniversário! 🌻</title>
+    <style>
+/* Overlay inicial */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.overlay-content {
+    text-align: center;
+    color: white;
+    animation: fadeIn 1s;
+}
+
+.overlay-icons {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.overlay-text {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.start-btn {
+    background: linear-gradient(135deg, #ff8c00, #ffd700);
+    border: none;
+    padding: 18px 40px;
+    font-size: 1.4em;
+    color: white;
+    border-radius: 40px;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(255,170,0,0.6);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.start-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(255,170,0,0.8);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            padding: 20px 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .music-control {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #ff8c00, #ffd700);
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            transition: transform 0.3s;
+        }
+
+        .music-control:hover {
+            transform: scale(1.1);
+        }
+
+        .sunflower {
+            position: absolute;
+            font-size: 60px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .sunflower-1 { top: -30px; right: 40px; animation-delay: 0s; }
+        .sunflower-2 { top: 50%; left: -30px; animation-delay: 1s; }
+        .sunflower-3 { bottom: -20px; right: 100px; animation-delay: 2s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff8c00;
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #19547b;
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .photo-card {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+            background: white;
+        }
+
+        .photo-card:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .photo-caption {
+            padding: 15px;
+            text-align: center;
+            background: linear-gradient(135deg, #ffd89b 0%, #ff8c00 100%);
+            color: white;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .message {
+            text-align: center;
+            color: #333;
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .qualities {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .quality-card {
+            background: linear-gradient(135deg, #ffd89b 0%, #ff8c00 100%);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            color: white;
+            font-size: 1.1em;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .quality-card:hover {
+            transform: translateY(-10px) scale(1.05);
+        }
+
+        .icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .dragon-balls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .dragon-ball {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #ff8c00, #ffd700);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            color: #ff0000;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            animation: spin 4s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .final-message {
+            text-align: center;
+            font-size: 1.5em;
+            color: #19547b;
+            margin-top: 40px;
+            font-weight: bold;
+        }
+
+        .heart {
+            color: #ff0000;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            .sunflower {
+                font-size: 40px;
+            }
+            .photo-card img {
+                height: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="startOverlay" class="overlay">
+    <div class="overlay-content">
+        <div class="overlay-icons">🎵 🌻 🎵</div>
+        <p class="overlay-text">Toque na tela para começar</p>
+        <button id="startButton" class="start-btn">▶ Começar a celebração!</button>
+    </div>
+</div>
+
+    <button class="music-control" id="musicBtn" title="Clique para tocar música">🎵</button>
+    <audio id="bgMusic" loop>
+    <source src="musica.mp3" type="audio/mpeg">
+</audio>
+    <div class="container">
+        <div class="sunflower sunflower-1">🌻</div>
+        <div class="sunflower sunflower-2">🌻</div>
+        <div class="sunflower sunflower-3">🌻</div>
+
+        <h1>🌻 Feliz Aniversário, Mãe! 🌻</h1>
+        <div class="subtitle">Uma mulher extraordinária que ilumina o mundo como um girassol!</div>
+
+        <div class="photo-gallery">
+            <div class="photo-card">
+    <img src="foto1.jpg" alt="Mãe sorrindo">
+    <div class="photo-caption">Seu sorriso ilumina tudo! ✨</div>
+              <div class="gif-final">
+    <img src="WhatsApp Video 2025-12-09 at 12.20.07.gif" alt="gif fofo">
+</div>
+<div class="photo-card">
+    <img src="foto2.jpg" alt="Mãe linda">
+    <div class="photo-caption">Linda por dentro e por fora! 💚</div>
+</div>
+        </div>
+        <div class="message">
+            Hoje é o dia de celebrar essa pessoa incrível que você é! 
+            Uma mulher forte, dedicada, que sempre busca fazer a diferença na vida das pessoas.
+            Assim como um girassol que sempre busca a luz, você ilumina todos ao seu redor com seu amor e dedicação.
+        </div>
+
+        <div class="qualities">
+            <div class="quality-card">
+                <div class="icon">💪</div>
+                <div>Guerreira Incansável</div>
+            </div>
+            <div class="quality-card">
+                <div class="icon">❤️</div>
+                <div>Coração Generoso</div>
+            </div>
+            <div class="quality-card">
+                <div class="icon">🌟</div>
+                <div>Inspiração Diária</div>
+            </div>
+            <div class="quality-card">
+                <div class="icon">🤗</div>
+                <div>Acolhedora</div>
+            </div>
+        </div>
+
+        <div class="message">
+            Você é como aqueles personagens que nunca desistem, 
+            que lutam pelos seus sonhos e pelos que amam com toda a força.
+            Sua energia é contagiante, seu sorriso transforma dias difíceis, 
+            e sua capacidade de ajudar as pessoas é simplesmente admirável!
+        </div>
+
+        <div class="dragon-balls">
+            <div class="dragon-ball">⭐</div>
+            <div class="dragon-ball">⭐</div>
+            <div class="dragon-ball">⭐</div>
+            <div class="dragon-ball">⭐</div>
+            <div class="dragon-ball">⭐</div>
+            <div class="dragon-ball">⭐</div>
+            <div class="dragon-ball">⭐</div>
+        </div>
+
+        <div class="message">
+            Que este novo ano seja repleto de realizações, alegrias e momentos especiais.
+            Que você continue sendo essa força da natureza que transforma vidas 
+            e espalha amor por onde passa. Você merece todo o melhor que o mundo tem a oferecer!
+        </div>
+
+        <div class="final-message">
+            Te amo muito! <span class="heart">❤️</span>
+            <br>
+            Você é incrível!
+        </div>
+    </div>
+
+    <script>
+const musicBtn = document.getElementById('musicBtn');
+const bgMusic = document.getElementById('bgMusic');
+const startOverlay = document.getElementById('startOverlay');
+const startButton = document.getElementById('startButton');
+
+let isPlaying = false;
+
+// Quando clicar no botão grande
+startButton.addEventListener('click', () => {
+    startMusicAndEnter();
+});
+
+// Função que inicia a música e remove o overlay
+function startMusicAndEnter() {
+    bgMusic.play().then(() => {
+        isPlaying = true;
+        musicBtn.textContent = '🔊';
+        startOverlay.style.display = 'none';
+    }).catch(() => {
+        // Caso ainda bloqueie (raro)
+        alert("Toque novamente para ativar a música!");
+    });
+}
+
+// Se a pessoa clicar em qualquer parte da tela
+startOverlay.addEventListener('click', () => {
+    startMusicAndEnter();
+});
+
+// Botão pequeno no canto superior direito
+musicBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (isPlaying) {
+        bgMusic.pause();
+        musicBtn.textContent = '🎵';
+    } else {
+        bgMusic.play();
+        musicBtn.textContent = '🔊';
+    }
+    isPlaying = !isPlaying;
+});
+</script>
+
+</body>
+</html>
